@@ -13,9 +13,9 @@ CREATE TABLE categories (
 CREATE TABLE items (
   itemID                INT             NOT NULL   AUTO_INCREMENT,
   categoryID        	INT             NOT NULL,
-  itemCode       	    VARCHAR(10)     NOT NULL,
-  itemName       	    VARCHAR(50)     NOT NULL,
-  itemDesc       	    VARCHAR(255)    NOT NULL,
+  itemCode       	  VARCHAR(10)     NOT NULL,
+  itemName       	  VARCHAR(50)     NOT NULL,
+  itemDesc       	  VARCHAR(255)    NOT NULL,
   itemPrice         	DECIMAL(10,2)   NOT NULL,
   itemSale          	DECIMAL(10,2)   NOT NULL     DEFAULT 0.00,
   PRIMARY KEY (itemID), 
