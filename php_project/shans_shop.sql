@@ -5,19 +5,19 @@ USE shans_shop;
 
 -- creates the tables
 CREATE TABLE categories (
-  categoryID        INT            	NOT NULL	AUTO_INCREMENT,
-  categoryName      VARCHAR(50)		  NOT NULL,
+  categoryID            INT            	NOT NULL	  AUTO_INCREMENT,
+  categoryName      	VARCHAR(50)	    NOT NULL,
   PRIMARY KEY (categoryID)
 );
 
 CREATE TABLE items (
-  itemID        	  INT            	NOT NULL	AUTO_INCREMENT,
-  categoryID        INT            	NOT NULL,
-  itemCode       	  VARCHAR(10)     NOT NULL,
-  itemName       	  VARCHAR(50)   	NOT NULL,
-  itemDesc       	  VARCHAR(255)    NOT NULL,
-  itemPrice         DECIMAL(10,2)  	NOT NULL,
-  itemSale          DECIMAL(10,2)   NOT NULL    DEFAULT 0.00,
+  itemID		        INT            	NOT NULL	  AUTO_INCREMENT,
+  categoryID        	INT            	NOT NULL,
+  itemCode       	    VARCHAR(10)     NOT NULL,
+  itemName       	    VARCHAR(50)   	NOT NULL,
+  itemDesc       	    VARCHAR(255)    NOT NULL,
+  itemPrice         	DECIMAL(10,2)  	NOT NULL,
+  itemSale          	DECIMAL(10,2)   NOT NULL        DEFAULT 0.00,
   PRIMARY KEY (itemID), 
   INDEX categoryID (categoryID), 
   UNIQUE INDEX itemCode (itemCode),
@@ -25,39 +25,39 @@ CREATE TABLE items (
 );
 
 CREATE TABLE users (
-  userID        	  INT            	NOT NULL	AUTO_INCREMENT,
-  userName      	  VARCHAR(50)		  NOT NULL,
-  userEmail         VARCHAR(50)		  NOT NULL,
-  password         	VARCHAR(50)    	NOT NULL,
-  userShipping      VARCHAR(255)		            DEFAULT NULL,
-  userBilling       VARCHAR(255)		            DEFAULT NULL,
+  userID        	    INT            	NOT NULL      AUTO_INCREMENT,
+  userName      	    VARCHAR(50)	    NOT NULL,
+  userEmail         	VARCHAR(50)	    NOT NULL,
+  password         	    VARCHAR(50)    	NOT NULL,
+  userShipping      	VARCHAR(255)		   	        DEFAULT NULL,
+  userBilling       	VARCHAR(255)		      	    DEFAULT NULL,
   PRIMARY KEY (userID),
   UNIQUE INDEX userEmail (userEmail)
 );
 
 CREATE TABLE orders (
-  orderID           INT            	NOT NULL   	AUTO_INCREMENT,
-  userID         	  INT            	              DEFAULT NULL,
-  orderDate         DATETIME      	NOT NULL,
-  orderTotal        DECIMAL(20,2)  	NOT NULL,
-  shipCost          DECIMAL(5,2)    NOT NULL      DEFAULT 0.00,
-  cardType          VARCHAR(20)     NOT NULL,
-  cardNumber        VARCHAR(20)     NOT NULL,
-  cardExpires       VARCHAR(20)     NOT NULL,
-  orderShip         VARCHAR(255)    NOT NULL,
-  orderBill       	VARCHAR(255)    NOT NULL,
+  orderID           	INT            	NOT NULL  	  AUTO_INCREMENT,
+  userID         	    INT            	                DEFAULT NULL,
+  orderDate         	DATETIME      	NOT NULL,
+  orderTotal        	DECIMAL(20,2)  	NOT NULL,
+  shipCost          	DECIMAL(5,2)    NOT NULL     	DEFAULT 0.00,
+  cardType          	VARCHAR(20)     NOT NULL,
+  cardNumber        	VARCHAR(20)     NOT NULL,
+  cardExpires       	VARCHAR(20)     NOT NULL,
+  orderShip         	VARCHAR(255)    NOT NULL,
+  orderBill       	    VARCHAR(255)    NOT NULL,
   PRIMARY KEY (orderID), 
   INDEX userID (userID),
   FOREIGN KEY (userID) REFERENCES users (userID)
 );
 
 CREATE TABLE orderItems (
-  lineID            INT            	NOT NULL   	AUTO_INCREMENT,
-  orderID           INT            	NOT NULL,
-  itemID          	INT            	NOT NULL,
-  linePrice         DECIMAL(10,2)   NOT NULL,
-  discount		      DECIMAL(10,2) 	NOT NULL,
-  quantity          INT 			      NOT NULL,
+  lineID            	INT            	NOT NULL   	  AUTO_INCREMENT,
+  orderID           	INT            	NOT NULL,
+  itemID          	    INT            	NOT NULL,
+  linePrice         	DECIMAL(10,2)   NOT NULL,
+  discount		        DECIMAL(10,2) 	NOT NULL,
+  quantity          	INT 			NOT NULL,
   PRIMARY KEY (lineID), 
   INDEX orderID (orderID), 
   INDEX itemID (itemID),
@@ -66,10 +66,10 @@ CREATE TABLE orderItems (
 );
 
 CREATE TABLE administrators (
-  adminID           INT            NOT NULL   	AUTO_INCREMENT,
-  adminEmail      	VARCHAR(255)   NOT NULL,
-  password          VARCHAR(255)   NOT NULL,
-  adminName         VARCHAR(255)   NOT NULL,
+  adminID           	INT            NOT NULL   	   AUTO_INCREMENT,
+  adminEmail      	    VARCHAR(255)   NOT NULL,
+  password          	VARCHAR(255)   NOT NULL,
+  adminName         	VARCHAR(255)   NOT NULL,
   PRIMARY KEY (adminID)
 );
 
@@ -101,13 +101,13 @@ INSERT INTO items (itemID, categoryID, itemCode, itemName, itemDesc, itemPrice, 
 (15, 3, 'parka', 'Parka Coat', 'Material: nylon body lined with faux fur \n Style: relaxed \n Color: grey', '35.00', '5.00');
 
 INSERT INTO users (userID , userEmail, password, userName, userShipping, userBilling) VALUES
-(1, 'allan.sherwood@yahoo.com', '$2y$10$UjBQLRLPvL0sTv69KfNl3e..J5my0JYrY4O2Tw2K/hfX1/PO1Kcc2', 'Allan Sherwood', 'PO BOX 74 Bridgewater NJ 08807', 'PO BOX 74 Bridgewater NJ 08807'),
-(2, 'barryz@gmail.com'        , '$2y$10$gt6wFRzdBJgqNfpEVDzx9ujZHT4v0vyqy.9m1L50FrZgd2g5T7N/.', 'Barry Zimmer', '112 Apt 2C Trent St Conyers GA 30013', '112 Apt 2C Trent St Conyers GA 30013'),
-(3, 'christineb@solarone.com' , '$2y$10$Z/PextRMfKKf9Ah7CQ/Rd.WWx8YvAjhFIZMyZeEy3qcCupv6v8sS.', 'Christine Brown', 'Skyfall #55 Aurora CO 80018', 'Skyfall #55 Aurora CO 80018'),
-(4, 'spark2200@ymail.com'     , '$2y$10$Z/PextRMfKKf9Ah7CQ/Rd.WWx8YvAjhFIZMyZeEy3qcCupv6v8sS.', 'Sarah Parker', '101 Main St Hartsville TN 37074', '101 Main St Hartsville TN 37074'),
+(1, 'allan.sherwood@yahoo.com', '$2y$10$UjBQLRLPvL0sTv69KfNl3e..J5my0JYrY4O2Tw2K/hfX1/PO1Kcc2', 'Allan Sherwood' , 'PO BOX 74 Bridgewater NJ 08807'         , 'PO BOX 74 Bridgewater NJ 08807'),
+(2, 'barryz@gmail.com'        , '$2y$10$gt6wFRzdBJgqNfpEVDzx9ujZHT4v0vyqy.9m1L50FrZgd2g5T7N/.', 'Barry Zimmer'   , '112 Apt 2C Trent St Conyers GA 30013'   , '112 Apt 2C Trent St Conyers GA 30013'),
+(3, 'christineb@solarone.com' , '$2y$10$Z/PextRMfKKf9Ah7CQ/Rd.WWx8YvAjhFIZMyZeEy3qcCupv6v8sS.', 'Christine Brown', 'Skyfall #55 Aurora CO 80018'            , 'Skyfall #55 Aurora CO 80018'),
+(4, 'spark2200@ymail.com'     , '$2y$10$Z/PextRMfKKf9Ah7CQ/Rd.WWx8YvAjhFIZMyZeEy3qcCupv6v8sS.', 'Sarah Parker'   , '101 Main St Hartsville TN 37074'        , '101 Main St Hartsville TN 37074'),
 (5, 'bobby@gmail.com'         , '$2y$10$UjBQLRLPvL0sTv69KfNl3e..J5my0JYrY4O2Tw2K/hfX1/PO1Kcc2', 'Bobby Henderson', '100 East Ridgewood Ave Paramus NJ 07652', '100 East Ridgewood Ave Paramus NJ 07652'),
-(6, 'larry@gmail.com'         , '$2y$10$Z/PextRMfKKf9Ah7CQ/Rd.WWx8YvAjhFIZMyZeEy3qcCupv6v8sS.', 'Larry Colmar', '21 Rosewood Rd Woodcliff Lake NJ 07677', '21 Rosewood Rd Woodcliff Lake NJ 07677'),
-(7, 'specis@gmail.com'        , '$2y$10$gt6wFRzdBJgqNfpEVDzx9ujZHT4v0vyqy.9m1L50FrZgd2g5T7N/.', 'Specis Cobrana', '19270 NW Cornell Rd Beaverton OR 97006', '19270 NW Cornell Rd Beaverton OR 97006');
+(6, 'larry@gmail.com'         , '$2y$10$Z/PextRMfKKf9Ah7CQ/Rd.WWx8YvAjhFIZMyZeEy3qcCupv6v8sS.', 'Larry Colmar'   , '21 Rosewood Rd Woodcliff Lake NJ 07677' , '21 Rosewood Rd Woodcliff Lake NJ 07677'),
+(7, 'specis@gmail.com'        , '$2y$10$gt6wFRzdBJgqNfpEVDzx9ujZHT4v0vyqy.9m1L50FrZgd2g5T7N/.', 'Specis Cobrana' , '19270 NW Cornell Rd Beaverton OR 97006' , '19270 NW Cornell Rd Beaverton OR 97006');
 
 INSERT INTO orders (orderID, userID, orderDate, orderTotal, cardType, cardNumber, cardExpires) VALUES
 (1, 1, '2018-05-30 09:40:28', '24.02', 'visa', '4111111111111111', '04/2025'),
