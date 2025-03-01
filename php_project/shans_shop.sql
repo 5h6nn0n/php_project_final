@@ -5,19 +5,19 @@ USE shans_shop;
 
 -- creates the tables
 CREATE TABLE categories (
-  categoryID            INT            	NOT NULL	  AUTO_INCREMENT,
-  categoryName      	VARCHAR(50)	    NOT NULL,
+  categoryID          INT             NOT NULL    AUTO_INCREMENT,
+  categoryName        VARCHAR(50)     NOT NULL,
   PRIMARY KEY (categoryID)
 );
 
 CREATE TABLE items (
-  itemID		        INT            	NOT NULL	  AUTO_INCREMENT,
-  categoryID        	INT            	NOT NULL,
+  itemID              INT             NOT NULL    AUTO_INCREMENT,
+  categoryID        	INT             NOT NULL,
   itemCode       	    VARCHAR(10)     NOT NULL,
-  itemName       	    VARCHAR(50)   	NOT NULL,
+  itemName       	    VARCHAR(50)     NOT NULL,
   itemDesc       	    VARCHAR(255)    NOT NULL,
-  itemPrice         	DECIMAL(10,2)  	NOT NULL,
-  itemSale          	DECIMAL(10,2)   NOT NULL        DEFAULT 0.00,
+  itemPrice         	DECIMAL(10,2)   NOT NULL,
+  itemSale          	DECIMAL(10,2)   NOT NULL      DEFAULT 0.00,
   PRIMARY KEY (itemID), 
   INDEX categoryID (categoryID), 
   UNIQUE INDEX itemCode (itemCode),
@@ -25,39 +25,39 @@ CREATE TABLE items (
 );
 
 CREATE TABLE users (
-  userID        	    INT            	NOT NULL      AUTO_INCREMENT,
-  userName      	    VARCHAR(50)	    NOT NULL,
-  userEmail         	VARCHAR(50)	    NOT NULL,
-  password         	    VARCHAR(50)    	NOT NULL,
-  userShipping      	VARCHAR(255)		   	        DEFAULT NULL,
-  userBilling       	VARCHAR(255)		      	    DEFAULT NULL,
+  userID              INT             NOT NULL    AUTO_INCREMENT,
+  userName            VARCHAR(50)     NOT NULL,
+  userEmail           VARCHAR(50)     NOT NULL,
+  password            VARCHAR(50)     NOT NULL,
+  userShipping        VARCHAR(255)                 DEFAULT NULL,
+  userBilling         VARCHAR(255)                 DEFAULT NULL,
   PRIMARY KEY (userID),
   UNIQUE INDEX userEmail (userEmail)
 );
 
 CREATE TABLE orders (
-  orderID           	INT            	NOT NULL  	  AUTO_INCREMENT,
-  userID         	    INT            	                DEFAULT NULL,
-  orderDate         	DATETIME      	NOT NULL,
-  orderTotal        	DECIMAL(20,2)  	NOT NULL,
-  shipCost          	DECIMAL(5,2)    NOT NULL     	DEFAULT 0.00,
-  cardType          	VARCHAR(20)     NOT NULL,
-  cardNumber        	VARCHAR(20)     NOT NULL,
-  cardExpires       	VARCHAR(20)     NOT NULL,
-  orderShip         	VARCHAR(255)    NOT NULL,
-  orderBill       	    VARCHAR(255)    NOT NULL,
+  orderID             INT             NOT NULL     AUTO_INCREMENT,
+  userID              INT                            DEFAULT NULL,
+  orderDate           DATETIME        NOT NULL,
+  orderTotal          DECIMAL(20,2)   NOT NULL,
+  shipCost            DECIMAL(5,2)    NOT NULL       DEFAULT 0.00,
+  cardType            VARCHAR(20)     NOT NULL,
+  cardNumber          VARCHAR(20)     NOT NULL,
+  cardExpires         VARCHAR(20)     NOT NULL,
+  orderShip           VARCHAR(255)    NOT NULL,
+  orderBill           VARCHAR(255)    NOT NULL,
   PRIMARY KEY (orderID), 
   INDEX userID (userID),
   FOREIGN KEY (userID) REFERENCES users (userID)
 );
 
 CREATE TABLE orderItems (
-  lineID            	INT            	NOT NULL   	  AUTO_INCREMENT,
-  orderID           	INT            	NOT NULL,
-  itemID          	    INT            	NOT NULL,
-  linePrice         	DECIMAL(10,2)   NOT NULL,
-  discount		        DECIMAL(10,2) 	NOT NULL,
-  quantity          	INT 			NOT NULL,
+  lineID              INT             NOT NULL      AUTO_INCREMENT,
+  orderID             INT             NOT NULL,
+  itemID              INT             NOT NULL,
+  linePrice           DECIMAL(10,2)   NOT NULL,
+  discount            DECIMAL(10,2)   NOT NULL,
+  quantity            INT             NOT NULL,
   PRIMARY KEY (lineID), 
   INDEX orderID (orderID), 
   INDEX itemID (itemID),
@@ -66,10 +66,10 @@ CREATE TABLE orderItems (
 );
 
 CREATE TABLE administrators (
-  adminID           	INT            NOT NULL   	   AUTO_INCREMENT,
-  adminEmail      	    VARCHAR(255)   NOT NULL,
-  password          	VARCHAR(255)   NOT NULL,
-  adminName         	VARCHAR(255)   NOT NULL,
+  adminID             INT            NOT NULL       AUTO_INCREMENT,
+  adminEmail          VARCHAR(255)   NOT NULL,
+  password            VARCHAR(255)   NOT NULL,
+  adminName           VARCHAR(255)   NOT NULL,
   PRIMARY KEY (adminID)
 );
 
