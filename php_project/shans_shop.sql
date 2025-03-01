@@ -5,14 +5,14 @@ USE shans_shop;
 
 -- creates the tables
 CREATE TABLE categories (
-  categoryID          INT             NOT NULL    AUTO_INCREMENT,
-  categoryName        VARCHAR(50)     NOT NULL,
+  categoryID            INT             NOT NULL    AUTO_INCREMENT,
+  categoryName          VARCHAR(50)     NOT NULL,
   PRIMARY KEY (categoryID)
 );
 
 CREATE TABLE items (
-  itemID              INT             NOT NULL    AUTO_INCREMENT,
-  categoryID        	INT             NOT NULL,
+  itemID                INT             NOT NULL    AUTO_INCREMENT,
+  categoryID        	  INT             NOT NULL,
   itemCode       	    VARCHAR(10)     NOT NULL,
   itemName       	    VARCHAR(50)     NOT NULL,
   itemDesc       	    VARCHAR(255)    NOT NULL,
