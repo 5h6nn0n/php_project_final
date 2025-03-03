@@ -7,15 +7,14 @@ It allows all casual users (registered and guest) to view items, add items to th
 orders if at least one item is added to their cart and valid payment is provided. Their cart will be 
 stored in a session. Items are sorted by category for convenient viewing. 
 
-Registered users log in 
-with an account, receive free membership shipping on all orders, and can view their personal order 
-history. Registered users can also edit the information on their profile. Guest users only have 
-permission to view items, add items to their cart, and place orders. Anyone who does not have a 
-pre-existing account, guest or otherwise, can create one to become (and receive all the benefits of) 
-a registered user. Administrators are given minimal restrictions in their ability to modify and 
-maintain the database, having the full range of permissions for this project: select, update, insert. 
-None of the users can delete anything from the database through this webapp because it is outside 
-the scope for this project’s requirements. 
+Registered users log in with an account using verifiable credentials, receive free membership 
+shipping on all orders, and can view their personal order history. Registered users can also edit the 
+information on their profile. Guest users only have permission to view items, add items to their cart, 
+and place orders. Anyone who does not have a pre-existing account, guest or otherwise, can create one 
+to become (and receive all the benefits of) a registered user. Administrators are given minimal 
+restrictions in their ability to modify and maintain the database, having the full range of permissions 
+for this project: select, update, insert. None of the users can delete anything from the database through 
+this webapp because it is outside the scope for this project’s requirements. 
 
 Test credentials:
 
