@@ -1,7 +1,7 @@
 <!--
 	Author: 5h6nn0n
 	Guest/items page 2 of 8
-    Filename: viewItems.php
+	Filename: viewItems.php
 -->
 
 <!DOCTYPE HTML>

@@ -2,7 +2,7 @@
 /*
 	Author: 5h6nn0n
 	Guest/items page 5 of 8
-    Filename: emptyCart.php
+	Filename: emptyCart.php
 */
 
 // opens the session 

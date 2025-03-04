@@ -2,7 +2,7 @@
 /*
 	Author: 5h6nn0n
 	Guest/items Page 8 of 8
-    Filename: confirmation.php 
+	Filename: confirmation.php 
 */
 
 $status = session_status();

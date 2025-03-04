@@ -2,7 +2,7 @@
 /*
 	Author: 5h6nn0n
 	Guest/items Page 7 of 8
-    Filename: addOrder.php 
+	Filename: addOrder.php 
 */
 // first time start new session 
 $status = session_status();
