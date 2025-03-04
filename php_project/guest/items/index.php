@@ -1,7 +1,7 @@
 <!--
 	Author: 5h6nn0n
 	Guest/items Page 1 of 8
-    Filename: index.php for guest folder	  
+	Filename: index.php for guest folder	  
 -->
    
 <?php
