@@ -2,7 +2,7 @@
 /*
 	Author: 5h6nn0n
 	Registered/items page 3 of 5
-    Filename: viewCart.php
+	Filename: viewCart.php
 */
 
 $status = session_status();

@@ -1,7 +1,7 @@
 <!--
 	Author: 5h6nn0n
 	Registered/items page 1 of 5
-    Filename: index.php for items folder  
+	Filename: index.php for items folder  
 -->
    
 <?php

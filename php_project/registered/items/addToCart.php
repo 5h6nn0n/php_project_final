@@ -2,7 +2,7 @@
 /*
 	Author: 5h6nn0n
 	Registered/items page 4 of 5
-    Filename: addToCart.php
+	Filename: addToCart.php
 */
 
 // first time start new session 

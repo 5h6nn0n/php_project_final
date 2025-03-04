@@ -1,7 +1,7 @@
 <!--
 	Author: 5h6nn0n
 	Registered/items page 2 of 5
-    Filename: viewItems.php
+	Filename: viewItems.php
 -->
 
 <!DOCTYPE HTML>
