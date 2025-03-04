@@ -2,7 +2,7 @@
 /*
 	Author: 5h6nn0n
 	Registered/orders Page 1 of 5
-    Filename: index.php for orders folder
+	Filename: index.php for orders folder
 */
 	
 // index for orders/registered

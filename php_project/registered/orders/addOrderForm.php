@@ -2,7 +2,7 @@
 /*
 	Author: 5h6nn0n
 	Registered/orders Page 2 of 5
-    Filename: addOrderForm.php 
+	Filename: addOrderForm.php 
 */
 $status = session_status();
 if ($status == PHP_SESSION_NONE) 

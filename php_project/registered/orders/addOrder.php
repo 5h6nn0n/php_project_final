@@ -2,7 +2,7 @@
 /*
 	Author: 5h6nn0n
 	Registered/orders Page 3 of 5
-    Filename: addOrder.php 
+	Filename: addOrder.php 
 */
 // first time start new session 
 $status = session_status();
